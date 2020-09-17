@@ -6,6 +6,8 @@
 
 /.idea/
 
+No_Sync/
+
 datasets/*/plots/*.png
 datasets/*/plots/*.h5
 datasets/*/data/
