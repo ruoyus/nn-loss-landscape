@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\margl1440\margr1440\vieww18260\viewh15280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \CocoaLigature0 -----------------------------------------------------------------\
+---args.mpi True ---distributed basic: rank = 0 ---number of processors = 2\
+-----------------------------------------------------------------\
+Rank 0 use GPU 0 of 2 GPUs on cyberpower\
+-----------------------------------------------------------------\
+---------call function net_plotter.name_direction_file -----------\
+-----------------------------------------------------------------\
+-----------------------------------------------------------------\
+--------- file2 does NOT exist -----------\
+-----------------------------------------------------------------\
+-------- directory of direction file:  /home/ruoyus/landscape2020/2018_landscape_goldstein_2D/datasets/cifar10/trained_nets/plot_2d_small  -----------\
+--------      name of direction file:  epoch_45_sd.pt_yignore=biasbn_ynorm=filter.h5  -----------\
+-------------------------------------------------------------------\
+setup_direction\
+-------------------------------------------------------------------\
+Setting up the plotting directions...\
+direction file created: /home/ruoyus/landscape2020/2018_landscape_goldstein_2D/datasets/cifar10/trained_nets/plot_2d_small/epoch_45_sd.pt_yignore=biasbn_ynorm=filter.h5\
+cosine similarity between x-axis and y-axis: -0.000231\
+Files already downloaded and verified\
+Files already downloaded and verified\
+----preparation time (setting up environment, loading models, loading data): 2.365074396133423\
+------------------------------------------------\
+------------- computation starts ----------------------\
+Traceback (most recent call last):\
+  File "plot_surface.py", line 365, in <module>\
+    crunch(surf_file, net, w, s, d, loader, f'\{dataset\}_loss', f'\{dataset\}_acc', comm, rank, args)\
+  File "plot_surface.py", line 91, in crunch\
+    f = h5py.File(surf_file, 'r+' if rank == 0 else 'r')  # check https://docs.h5py.org/en/stable/quick.html for h5py files\
+  File "/home/ruoyus/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 394, in __init__\
+    swmr=swmr)\
+  File "/home/ruoyus/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py", line 172, in make_fid\
+    fid = h5f.open(name, h5f.ACC_RDWR, fapl=fapl)\
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper\
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper\
+  File "h5py/h5f.pyx", line 85, in h5py.h5f.open\
+OSError: Unable to open file (unable to lock file, errno = 11, error message = 'Resource temporarily unavailable')\
+-----------------------------------------------------------------\
+---args.mpi True ---distributed basic: rank = 1 ---number of processors = 2\
+-----------------------------------------------------------------\
+Rank 1 use GPU 1 of 2 GPUs on cyberpower\
+-----------------------------------------------------------------\
+---------call function net_plotter.name_direction_file -----------\
+-----------------------------------------------------------------\
+-----------------------------------------------------------------\
+--------- file2 does NOT exist -----------\
+-----------------------------------------------------------------\
+-------- directory of direction file:  /home/ruoyus/landscape2020/2018_landscape_goldstein_2D/datasets/cifar10/trained_nets/plot_2d_small  -----------\
+--------      name of direction file:  epoch_45_sd.pt_yignore=biasbn_ynorm=filter.h5  -----------\
+Files already downloaded and verified\
+----preparation time (setting up environment, loading models, loading data): 2.281789779663086\
+------------------------------------------------\
+------------- computation starts ----------------------\
+Computing 8 values for rank 1\
+Evaluating rank 1  0/8  (0.0%)  coord=[-1.          0.33333333] 	train_loss= 302.136 	train_acc=10.00 	time=7.13 	sync=0.00\
+Evaluating rank 1  1/8  (12.5%)  coord=[-0.33333333  0.33333333] 	train_loss= 6.030 	train_acc=17.61 	time=5.45 	sync=0.00\
+Evaluating rank 1  2/8  (25.0%)  coord=[0.33333333 0.33333333] 	train_loss= 4.078 	train_acc=13.11 	time=5.14 	sync=0.00\
+Evaluating rank 1  3/8  (37.5%)  coord=[1.         0.33333333] 	train_loss= 1271.527 	train_acc=10.00 	time=5.21 	sync=0.00\
+Evaluating rank 1  4/8  (50.0%)  coord=[-1.  1.] 	train_loss= 7409.303 	train_acc=9.52 	time=5.32 	sync=0.00\
+Evaluating rank 1  5/8  (62.5%)  coord=[-0.33333333  1.        ] 	train_loss= 614.840 	train_acc=10.00 	time=5.36 	sync=0.00\
+Evaluating rank 1  6/8  (75.0%)  coord=[0.33333333 1.        ] 	train_loss= 1115.338 	train_acc=10.00 	time=4.93 	sync=0.00\
+Evaluating rank 1  7/8  (87.5%)  coord=[1. 1.] 	train_loss= 41416.171 	train_acc=10.00 	time=5.39 	sync=0.00\
+Rank 1 done!  Total time: 44.34 Sync: 0.00\
+}
